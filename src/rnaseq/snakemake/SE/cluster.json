@@ -1,0 +1,49 @@
+{
+      "documenation": {
+        "cmdline": "Use with snakemake --cluster-config cluster.json --cluster 'sbatch --job-name {cluster.job-name} --ntasks {cluster.ntasks} --cpus-per-task {threads} --mem-per-cpu {cluster.mem} --time {cluster.time} --mail-user {cluster.mail-user} --mail-type {cluster.mail-type} --error {cluster.error} --output {cluster.output}'"
+    },
+    "__default__" :
+    {
+        "account" : "jh6577",
+        "time" : "02:00:00",
+        "ntasks" : 1,
+        "cpus-per-task" : 1,
+        "mail-user" : "jh6577@nyu.edu",
+        "mail-type" : "NONE",
+        "mem" : 2000,
+        "jobs" : 20,
+    },
+    "fastq_dump_SRA" :
+    {
+        "job-name" : "fastq_dump_SRA",
+        "time" : "02:00:00",
+        "output": "logs/fastqdump_%A_%a.out",
+        "error": "logs/fastqdump_%A_%a.err",
+        "mem" : 5000,
+        "cpus-per-task" : 4,
+    },
+    "QCADAPTERS" :
+    {
+        "job-name" : "QCADAPTERS",
+        "time" : "02:00:00",
+        "output": "logs/qcadapter_%A_%a.out",
+        "error": "logs/qcadapter_%A_%a.err",
+        "mem" : 4000,
+    },
+    "STAR_ALN" :
+    {
+        "job-name" : "STAR_ALN",
+        "time" : "00:30:00",
+        "output" : "logs/star_aln_%A_%a.out",
+        "error": "logs/star_aln_%A_%a.err",
+        "mem" : 30000,
+    },
+    "FCSTAR" :
+    {
+        "job-name" : "FCSTAR",
+        "time" : "1:00:00",
+        "output" : "logs/featureCount_%A_%a.out",
+        "error": "logs/featureCount_%A_%a.err",
+        "mem" : 10000,
+    },
+}

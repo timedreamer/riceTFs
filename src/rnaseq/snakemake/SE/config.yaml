@@ -1,0 +1,21 @@
+# The configuration settings for RNA-Seq snakemake pipeline.
+
+# Author: Ji Huang
+# Date: 2018-08-08
+# Last modified: 2020-04-30
+
+
+STARREF: '/scratch/cgsb/coruzzi/jh6577/GenomeFile/rice_MSU7/STAR_index'
+
+FCOUNTREF: '/scratch/cgsb/coruzzi/jh6577/GenomeFile/rice_MSU7/all.gtf'
+
+LENGTH_CUT: '25'
+
+
+SRADIR: '../data/sra'
+TRIM_OUTDIR: '../data/trim_FASTQ'
+
+# change output name for each project
+FCRESULT_STAR: '../result/featureCount/star_osa_0430_11SRP_SE.featureCount'
+FCSUMMARY_STAR: '../result/featureCount/star_osa_0430_11SRP_SE_FC_summary.txt'
+
