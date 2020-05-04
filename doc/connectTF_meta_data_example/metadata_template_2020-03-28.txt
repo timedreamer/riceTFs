@@ -1,0 +1,15 @@
+*Transcription_Factor_ID: 
+*Experiment_Type: 
+*Technology/Method: 
+*Edge_Type: 
+*Data_Source/Publication: 
+*Genotype: 
+*Treatments: 
+*Control: 
+*Tissue/Sample: 
+Treatment_Time: 
+Growth_Period_Days: 
+Growth_Medium: 
+Analysis_Method: 
+Analysis_Cutoff: 
+DOI: 
