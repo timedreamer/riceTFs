@@ -4,10 +4,11 @@
 # See `snakemake` pipelines for processing details.
 
 # Author: Ji Huang
-# Date: 2020-05-03
+# Date: 2020-05-04
 
-# Rice gene: WOX11 (LOC_Os07g48560).
-# Paper: https://www.ncbi.nlm.nih.gov/pubmed/29361035
+# Rice gene: NAC10 (LOC_Os11g03300); NAC5 (LOC_Os11g08210); 
+# NAC6 (LOC_Os01g66120); NAC9 (LOC_Os03g60080)
+# Paper: https://www.ncbi.nlm.nih.gov/pubmed/29329517
 
 
 # 0. Prep ---------------------------------------------------------------------------
@@ -18,10 +19,10 @@ library(tidyverse)
 library(DESeq2)
 
 # Specify SRP numeber and DESeq2 pvalue cutoff.
-SRP_num <- "SRP118965"
+SRP_num <- "SRP115928"
 p_cutoff <- 0.05
-gene_name <- "WOX11"
-loc_id <- "LOC_Os07g48560"
+#gene_name <- ""
+#loc_id <- ""
 
 
 
@@ -29,18 +30,19 @@ loc_id <- "LOC_Os07g48560"
 
 lib_table <- read_tsv(here("data", "20200430_11SRP_RNASeq",
                            "SraRunTable_20200430_11SRP.tsv")) %>% 
-  filter(`SRA Study` == SRP_num, `Assay Type` == "RNA-Seq") %>% 
-  select(Run, tissue, Genotype)
+  filter(`SRA Study` == SRP_num, `Assay Type` == "RNA-Seq")
+  
 
 ## manually change
-lib_table <- lib_table %>% mutate(genotype = case_when(Genotype == "wild type" ~ "wt",
-                                          Genotype == "wox11 mutant" ~ "wox11_mut")) %>% 
-  filter(genotype != "NA")
-
-
+lib_table <- lib_table %>% select(Run, source_name) %>% 
+  mutate(genotype = case_when(Run %in% c("SRR5952558", "SRR5952563") ~ "wt",
+                              Run %in% c("SRR5952559", "SRR5952564") ~ "nac5",
+                              Run %in% c("SRR5952560", "SRR5952565") ~ "nac6",
+                              Run %in% c("SRR5952561", "SRR5952566") ~ "nac9",
+                              Run %in% c("SRR5952562", "SRR5952567") ~ "nac10")) %>% 
+  mutate(genotype = factor(genotype, levels= c("wt", "nac5", "nac6", "nac9", "nac10")))
 
 # 2. Read raw count -----------------------------------------------------------------
-
 
 raw_data <-read.table(here("data", "20200430_11SRP_RNASeq", 
                            "star_osa_0430_11SRP_PE.featureCount.gz"),
@@ -67,20 +69,37 @@ dds_rice <- dds_rice[keep,]
 
 dds <- DESeq(dds_rice, quiet = F)
 resultsNames(dds)
-de_gene <- results(dds, contrast = c(1,-1), tidy = T, 
+
+de_nac5 <- results(dds, contrast = c("genotype", "nac5", "wt"), tidy = T, 
                 alpha = p_cutoff) %>% filter(padj < p_cutoff)
 
-# de_gene2 <- results(dds, contrast = c("genotype", "wox11_mut", "wt"), tidy = T, 
-#                    alpha = p_cutoff) %>% filter(padj < p_cutoff)
+de_nac6 <- results(dds, contrast = c("genotype", "nac6", "wt"), tidy = T, 
+                   alpha = p_cutoff) %>% filter(padj < p_cutoff)
+
+de_nac9 <- results(dds, contrast = c("genotype", "nac9", "wt"), tidy = T, 
+                   alpha = p_cutoff) %>% filter(padj < p_cutoff)
+
+de_nac10 <- results(dds, contrast = c("genotype", "nac10", "wt"), tidy = T, 
+                   alpha = p_cutoff) %>% filter(padj < p_cutoff)
 
 
 
 # 4. Save result --------------------------------------------------------------------
-file_name <- paste0("rice_", gene_name, "_", loc_id, "_lof_DESeq2_", nrow(de_gene), 
-                    "_mut_vs_wt",".tsv")
+fn_nac5 <- paste0("rice_NAC5_LOC_Os11g08210", "_OE_DESeq2_", nrow(de_nac5), 
+                    "_nac5VSwt",".tsv")
+write_tsv(de_nac5, here("result", "rnaseq","DE_result", fn_nac5))
 
-write_tsv(de_gene, here("result", "rnaseq","DE_result", file_name))
+fn_nac6 <- paste0("rice_NAC6_LOC_Os01g66120", "_OE_DESeq2_", nrow(de_nac6), 
+                  "_nac6VSwt",".tsv")
+write_tsv(de_nac6, here("result", "rnaseq","DE_result", fn_nac6))
 
+fn_nac9 <- paste0("rice_NAC9_LOC_Os03g60080", "_OE_DESeq2_", nrow(de_nac9), 
+                  "_nac9VSwt",".tsv")
+write_tsv(de_nac9, here("result", "rnaseq","DE_result", fn_nac9))
+
+fn_nac10 <- paste0("rice_NAC10_LOC_Os11g03300", "_OE_DESeq2_", nrow(de_nac10), 
+                  "_nac10VSwt",".tsv")
+write_tsv(de_nac10, here("result", "rnaseq","DE_result", fn_nac10))
 
 # 5. Quick PCA plot -----------------------------------------------------------------
 

@@ -4,10 +4,10 @@
 # See `snakemake` pipelines for processing details.
 
 # Author: Ji Huang
-# Date: 2020-05-03
+# Date: 2020-05-04
 
-# Rice gene: WOX11 (LOC_Os07g48560).
-# Paper: https://www.ncbi.nlm.nih.gov/pubmed/29361035
+# Rice gene: bHLH148 (LOC_Os03g53020).
+# Paper: NA
 
 
 # 0. Prep ---------------------------------------------------------------------------
@@ -18,10 +18,10 @@ library(tidyverse)
 library(DESeq2)
 
 # Specify SRP numeber and DESeq2 pvalue cutoff.
-SRP_num <- "SRP118965"
+SRP_num <- "SRP052309"
 p_cutoff <- 0.05
-gene_name <- "WOX11"
-loc_id <- "LOC_Os07g48560"
+gene_name <- "BHLH148"
+loc_id <- "LOC_Os03g53020"
 
 
 
@@ -29,21 +29,24 @@ loc_id <- "LOC_Os07g48560"
 
 lib_table <- read_tsv(here("data", "20200430_11SRP_RNASeq",
                            "SraRunTable_20200430_11SRP.tsv")) %>% 
-  filter(`SRA Study` == SRP_num, `Assay Type` == "RNA-Seq") %>% 
-  select(Run, tissue, Genotype)
+  filter(`SRA Study` == SRP_num, `Assay Type` == "RNA-Seq")
+  
 
 ## manually change
-lib_table <- lib_table %>% mutate(genotype = case_when(Genotype == "wild type" ~ "wt",
-                                          Genotype == "wox11 mutant" ~ "wox11_mut")) %>% 
-  filter(genotype != "NA")
-
+lib_table <- lib_table %>% select(Run, Genotype, treatment) %>% 
+  mutate(genotype = case_when(Genotype == "wild type" ~ "wt",
+                              Genotype == "OsbHLH148 loss-of-function" ~ "bhlh148_mut")) %>% 
+  mutate(condition = paste0(genotype, "_", treatment)) %>% 
+  mutate(condition = factor(condition, 
+                            levels=c("wt_control", "wt_drought",
+                                     "bhlh148_mut_control", "bhlh148_mut_drought")))
 
 
 # 2. Read raw count -----------------------------------------------------------------
 
 
 raw_data <-read.table(here("data", "20200430_11SRP_RNASeq", 
-                           "star_osa_0430_11SRP_PE.featureCount.gz"),
+                           "star_osa_0430_11SRP_SE.featureCount.gz"),
                        sep="\t",header=T,row.names=1)
 
 raw_data[1:5] <- NULL
@@ -58,7 +61,7 @@ raw_data <- raw_data %>% select(lib_table$Run)
 
 dds_rice <- DESeqDataSetFromMatrix(countData = raw_data,
                                    colData = lib_table,
-                                   design = ~ 0+genotype)
+                                   design = ~ 0+condition)
 
 keep <- rowSums(counts(dds_rice)) >= 10
 sum(keep)
@@ -67,25 +70,39 @@ dds_rice <- dds_rice[keep,]
 
 dds <- DESeq(dds_rice, quiet = F)
 resultsNames(dds)
-de_gene <- results(dds, contrast = c(1,-1), tidy = T, 
+
+de_mutVSwt_control <- results(dds, contrast = c(-1,0,1,0), tidy = T, 
                 alpha = p_cutoff) %>% filter(padj < p_cutoff)
 
-# de_gene2 <- results(dds, contrast = c("genotype", "wox11_mut", "wt"), tidy = T, 
-#                    alpha = p_cutoff) %>% filter(padj < p_cutoff)
+de_mutVSwt_drought <- results(dds, contrast = c(0,-1,0,1), tidy = T, 
+                              alpha = p_cutoff) %>% filter(padj < p_cutoff)
+
+
+de_mutVSwt_interaction <- results(dds, contrast = c(1,-1,-1,1), tidy = T, 
+                              alpha = p_cutoff) %>% filter(padj < p_cutoff)
+
 
 
 
 # 4. Save result --------------------------------------------------------------------
-file_name <- paste0("rice_", gene_name, "_", loc_id, "_lof_DESeq2_", nrow(de_gene), 
-                    "_mut_vs_wt",".tsv")
+fn_mutVSwt_control <- paste0("rice_", gene_name, "_", loc_id, "_lof_DESeq2_", nrow(de_mutVSwt_control), 
+                    "_mutVSwt_control",".tsv")
+write_tsv(de_mutVSwt_control, here("result", "rnaseq","DE_result", fn_mutVSwt_control))
 
-write_tsv(de_gene, here("result", "rnaseq","DE_result", file_name))
 
+fn_mutVSwt_drought <- paste0("rice_", gene_name, "_", loc_id, "_lof_DESeq2_", nrow(de_mutVSwt_drought), 
+                             "_mutVSwt_drought",".tsv")
+write_tsv(de_mutVSwt_drought, here("result", "rnaseq","DE_result", fn_mutVSwt_drought))
+
+
+fn_mutVSwt_interaction <- paste0("rice_", gene_name, "_", loc_id, "_lof_DESeq2_", nrow(de_mutVSwt_interaction), 
+                             "_mutVSwt_interaction",".tsv")
+write_tsv(de_mutVSwt_interaction, here("result", "rnaseq","DE_result", fn_mutVSwt_interaction))
 
 # 5. Quick PCA plot -----------------------------------------------------------------
 
 vsd <- vst(dds_rice, blind=FALSE)
-plotPCA(vsd, intgroup=c("genotype"))
+plotPCA(vsd, intgroup=c("condition"))
 
 
 # 6. Session info -------------------------------------------------------------------
