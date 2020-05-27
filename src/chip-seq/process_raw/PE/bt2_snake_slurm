@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# launch snakemake to run jobs on NYU Prince via SLURM
+#
+SM_PARAMS="job-name time mail-user mail-type error output"
+SM_ARGS="--cpus-per-task {threads} --mem {cluster.mem}"
+
+for P in ${SM_PARAMS}; do SM_ARGS="$SM_ARGS --$P {cluster.$P}"; done
+
+echo "SM_ARGS: ${SM_ARGS}"
+
+# our SLURM error/output paths expect a logs/ subdir in PWD
+mkdir -p logs
+
+# load modules
+module purge
+module load sra-tools/intel/2.9.6
+module load bowtie2/2.3.4.3
+module load samtools/intel/1.9
+module load sambamba/0.6.6
+module load samblaster/intel/0.1.24
+module load r/gnu/3.5.1
+
+
+snakemake \
+	$* \
+	--jobs 10 \
+    --latency-wait 100 \
+    --cluster-config cluster_bt2.json \
+    --cluster "sbatch $SM_ARGS" \
+    --rerun-incomplete --keep-going \
+    -s chip_pipeline_bt2.snakefile
+    
+

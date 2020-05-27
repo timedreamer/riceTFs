@@ -1,0 +1,24 @@
+# My configuration settings for ChIP-Seq analysis in maize.
+
+# may need to change each project
+SRADIR: '../data/01sra'
+
+BT2INDEX: '/scratch/cgsb/coruzzi/jh6577/GenomeFile/rice_MSU7/bowtie2_index/bowtie2_index'
+
+REFGENOME: '/scratch/cgsb/coruzzi/jh6577/GenomeFile/rice_MSU7/all.con'
+
+GENE_BED: '/scratch/cgsb/coruzzi/jh6577/GenomeFile/rice_MSU7/all_gene.bed'
+LENGTH_CUT: '25'
+
+MAPQ_FILTER: '10'
+
+# Single-end or paire-end.
+# Use "PE" for PAIR-END. Use "SE" for SINGLE-END
+# Only ""
+SEQ_END: 'PE' # "PE" or "SE"
+
+# MACS effective genome size
+SIZE: '0.2e9'
+
+# Bedtools closet gene range
+RANGE: '5000'

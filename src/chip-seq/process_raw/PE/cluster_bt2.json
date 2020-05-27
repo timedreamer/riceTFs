@@ -1,0 +1,134 @@
+{
+      "documenation": {
+        "cmdline": "Use with snakemake --cluster-config cluster.json --cluster 'sbatch --job-name {cluster.job-name} --ntasks {cluster.ntasks} --cpus-per-task {threads} --mem-per-cpu {cluster.mem} --time {cluster.time} --mail-user {cluster.mail-user} --mail-type {cluster.mail-type} --error {cluster.error} --output {cluster.output}'"
+    },
+    "__default__" :
+    {
+        "account" : "jh6577",
+        "time" : "02:00:00",
+        "ntasks" : 1,
+        "cpus-per-task" : 2,
+        "mail-user" : "jh6577@nyu.edu",
+        "mail-type" : "END",
+        "mem" : 2000,
+        "jobs" : 20,
+    },
+    "DOWNLOAD_SRA" :
+    {
+        "job-name" : "DOWNLOAD_SRA",
+        "time" : "02:00:00",
+        "output": "logs/download_%A_%a.out",
+        "error": "logs/download_%A_%a.err",
+    },
+    "FASTQ_DUMP" :
+    {
+        "job-name" : "FASTQ_DUMP",
+        "time" : "04:00:00",
+        "output": "logs/fastqdump_%A_%a.out",
+        "error": "logs/fastqdump_%A_%a.err",
+        "mem" : 5000,
+    },
+    "QC_ADAPTERS_SE" :
+    {
+        "job-name" : "QC_ADAPTERS_SE",
+        "time" : "02:00:00",
+        "output": "logs/qcadapter_%A_%a.out",
+        "error": "logs/qcadapter_%A_%a.err",
+        "mem" : 5000,
+    },
+    "QC_ADAPTERS_PE" :
+    {
+        "job-name" : "QC_ADAPTERS_PE",
+        "time" : "02:00:00",
+        "output": "logs/qcadapter_%A_%a.out",
+        "error": "logs/qcadapter_%A_%a.err",
+        "mem" : 5000,
+    },
+    "BT2_ALIGN_SE" :
+    {
+        "job-name" : "BT2_ALIGN_SE",
+        "time" : "04:00:00",
+        "output": "logs/bt2align_%A_%a.out",
+        "error": "logs/bt2align_%A_%a.err",
+        "mem" : 30000,
+    },
+    "BT2_ALIGN_PE" :
+    {
+        "job-name" : "BT2_ALIGN_PE",
+        "time" : "04:00:00",
+        "output": "logs/bt2align_%A_%a.out",
+        "error": "logs/bt2align_%A_%a.err",
+        "mem" : 30000,
+    },
+    "MAPQ_FILTER" :
+    {
+        "job-name" : "MAPQ_FILTER",
+        "time" : "02:00:00",
+        "output": "logs/mapqfilter_%A_%a.out",
+        "error": "logs/mapqfilter_%A_%a.err",
+        "mem" : 5000,
+    },
+    "BAM1_INDEX_FLAG" :
+    {
+        "job-name" : "BAM1_INDEX_FLAG",
+        "time" : "02:00:00",
+        "output": "logs/bt2index1Flag_%A_%a.out",
+        "error": "logs/bt2index1Flag_%A_%a.err",
+        "mem" : 5000,
+    },
+     "BAM2_INDEX_FLAG" :
+    {
+        "job-name" : "BAM2_INDEX_FLAG",
+        "time" : "02:00:00",
+        "output": "logs/bt2index2Flag_%A_%a.out",
+        "error": "logs/bt2index2Flag_%A_%a.err",
+        "mem" : 5000,
+    },
+     "DOWN_SAMPLE" :
+    {
+        "job-name" : "DOWN_SAMPLE",
+        "time" : "02:00:00",
+        "output": "logs/dpwnsample_bam_%A_%a.out",
+        "error": "logs/downsample_%A_%a.err",
+        "mem" : 8000,
+    },
+    "FLAGSTAT_DOWNBAM" :
+    {
+        "job-name" : "FLAGSTAT_DOWNBAM",
+        "time" : "02:00:00",
+        "output": "logs/flagstat_downbam_%A_%a.out",
+        "error": "logs/flagstat_downbam_%A_%a.err",
+        "mem" : 5000,
+    },
+    "MAKE_BIGWIGS" :
+    {
+        "job-name" : "MAKE_BIGWIGS",
+        "time" : "04:00:00",
+        "output": "logs/make_bigwigs_%A_%a.out",
+        "error": "logs/make_bigwigs_%A_%a.err",
+        "mem" : 8000,
+    },
+    "MULTIPLE_METRICS" :
+    {
+        "job-name" : "MULTIPLE_METRICS",
+        "output" : "logs/picard_%A_%a.out",
+        "error": "logs/picard_%A_%a.err",
+        "mem" : 15000,
+    },
+    "CALL_PEAKS" :
+    {
+        "job-name" : "CALL_PEAKS",
+        "output" : "logs/callPeaks_%A_%a.out",
+        "error": "logs/callPeaks_%A_%a.err",
+        "mem" : 10000,
+        "time" : "01:00:00",
+    },
+    "DEEP_TOOLS" :
+    {
+        "job-name" : "DEEP_TOOLS",
+        "output" : "logs/deepTools_%A_%a.out",
+        "error": "logs/deepTools_%A_%a.err",
+        "mem" : 24000,
+        "time" : "05:30:00",
+    },
+}
