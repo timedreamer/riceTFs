@@ -1,0 +1,18 @@
+*Transcription_Factor_ID: LOC_Os11g31340
+*Experiment_Type: Expression
+*Technology/Method: RNA-seq
+*Edge_Type: in planta:Regulated
+*Data_Source/Publication: Ren bioRxiv preprint
+*Genotype: pUbi::ONAC127-FLAG
+*Variety: Zhonghua11
+*Treatments: none
+*Control: WT Zhonghua11
+*Tissue/Sample: seed
+Treatment_Time: NA
+Growth_Period_Days: 7 days after pollination
+Growth_Medium: paddy fields
+Analysis_Method: DESeq2
+Analysis_Cutoff: pvalue<0.05
+DOI: 10.1101/2020.02.08.939728
+
+

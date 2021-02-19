@@ -1,0 +1,18 @@
+*Transcription_Factor_ID: LOC_Os01g64730
+*Experiment_Type: Binding
+*Technology/Method: ChIP-seq
+*Edge_Type: in planta:Bound
+*Data_Source/Publication: Zhang J. Exp. Botany 2017 
+*Genotype: Pubi:OsABF1-VP64 (ABF1V) 
+*Variety: Kitaake
+*Control: Input DNA
+*Tissue/Sample: leaves
+Treatment_Time: NA
+Antibody: anti-OsABF1 
+Growth_Period_Days: 4 weeks
+Growth_Medium: soil
+Analysis_Method: MACS
+Analysis_Cutoff: Unknown
+DOI: 10.1093/jxb/erx260
+
+

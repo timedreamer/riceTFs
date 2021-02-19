@@ -1,0 +1,18 @@
+*Transcription_Factor_ID: LOC_Os11g03300
+*Experiment_Type: Binding
+*Technology/Method: ChIP-seq
+*Edge_Type: in planta:Bound  
+*Data_Source/Publication: Chung BMC Genomics 2018
+*Genotype: RCc3:6xmyc-OsNAC10
+*Variety: Illmi
+*Treatments: none
+*Control: Input DNA 
+*Tissue/Sample: roots
+Treatment_Time: NA
+Antibody: α-myc (sc-789, Santa Cruz)
+Growth_Period_Days: 20 days
+Growth_Medium: soil and hydroponics
+Analysis_Method: Unknown
+Analysis_Cutoff: Unknown
+DOI: 10.1186/s12864-017-4367-1
+

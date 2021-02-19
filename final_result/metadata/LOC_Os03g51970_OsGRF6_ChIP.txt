@@ -1,0 +1,18 @@
+*Transcription_Factor_ID: LOC_Os03g51970
+*Experiment_Type: Binding
+*Technology/Method: ChIP-seq
+*Edge_Type: in planta:Bound   
+*Data_Source/Publication: Gao Nature Plants 2016 
+*Genotype: p35S:GRF6-GFP
+*Variety: Indica
+*Treatments: none 
+*Control: Input DNA
+*Tissue/Sample: calli
+Treatment_Time: NA
+Antibody: anti-GFP
+Growth_Period_Days: Unknown
+Growth_Medium: Unknown
+Analysis_Method: MACS
+Analysis_Cutoff: pvalue<10−5
+DOI: 10.1038/nplants.2015.196
+

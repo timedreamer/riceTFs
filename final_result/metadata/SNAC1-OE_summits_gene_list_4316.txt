@@ -1,0 +1,18 @@
+*Transcription_Factor_ID: LOC_Os03g60080
+*Experiment_Type: Binding
+*Technology/Method: ChIP-seq
+*Edge_Type: in planta:Bound
+*Data_Source/Publication: Li Frontiers in Plant Science, 2019
+*Genotype: ZmUbiquitin:SNAC1
+*Variety: Zhonghua11
+*Treatments: none
+*Control: Input DNA
+*Tissue/Sample: shoot
+Treatment_Time: NA
+Antibody: anti-SNAC1
+Growth_Period_Days: 4-leaf-stage 
+Growth_Medium: soil
+Analysis_Method: MACS2
+Analysis_Cutoff: qvalue<0.05
+DOI: 10.3389/fpls.2019.00982
+

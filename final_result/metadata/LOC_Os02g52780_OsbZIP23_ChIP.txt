@@ -1,0 +1,18 @@
+*Transcription_Factor_ID: LOC_Os02g52780 
+*Experiment_Type: Binding
+*Technology/Method: ChIP-seq
+*Edge_Type: in planta:Bound
+*Data_Source/Publication: Zong Plant Physiol. 2016 
+*Genotype: maize ubiquitin promoter OsbZIP23 - OX
+*Variety: Zhonghua11
+*Control: Input DNA
+*Tissue/Sample: leaves
+Treatment_Time: NA
+Antibody: anti-OsbZIP23
+Growth_Period_Days: four-leaf stage 
+Growth_Medium: soil
+Analysis_Method: MACS
+Analysis_Cutoff: Unknown
+DOI: 10.1104/pp.16.00469
+
+

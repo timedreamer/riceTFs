@@ -1,0 +1,16 @@
+*Transcription_Factor_ID: LOC_Os09g34880
+*Experiment_Type: Expression
+*Technology/Method: RNA-seq
+*Edge_Type: in planta:Regulated
+*Data_Source/Publication: Unknown
+*Genotype: osbzip76-1
+*Variety: unknown
+*Treatments: none
+*Control: WT
+*Tissue/Sample: seed
+Treatment_Time: NA
+Growth_Period_Days: 2 days after fertilization
+Growth_Medium: Unknown
+Analysis_Method: DESeq2
+Analysis_Cutoff: FDR<0.05
+DOI: Unknown

@@ -1,0 +1,18 @@
+*Transcription_Factor_ID: LOC_Os02g07430
+*Experiment_Type: Binding
+*Technology/Method: ChIP-seq
+*Edge_Type: in planta:Bound   
+*Data_Source/Publication: Unknown 
+*Genotype: MADS29 OX 
+*Variety: unknown
+*Treatments: none 
+*Control: Input DNA 
+*Tissue/Sample: seed
+Treatment_Time: NA
+Antibody: anti-MADS29
+Growth_Period_Days: 9 Days after pollination  
+Growth_Medium: soil
+Analysis_Method: MACS
+Analysis_Cutoff: pvalue<9.999999747378752E-6
+DOI: Unknown
+

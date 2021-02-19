@@ -1,0 +1,18 @@
+*Transcription_Factor_ID: LOC_Os04g38720
+*Experiment_Type: Binding
+*Technology/Method: ChIP-seq
+*Edge_Type: in planta:Bound
+*Data_Source/Publication: Shen Scientific Report 2017
+*Genotype: 35S:NAC2-mGFP
+*Variety: Nipponbare
+*Treatments: none
+*Control: Input DNA
+*Tissue/Sample: seedling
+Treatment_Time: NA
+Antibody: anti-mGFP
+Growth_Period_Days: 2 weeks
+Growth_Medium: Unknown
+Analysis_Method: MACS2
+Analysis_Cutoff: qvalue<0.05
+DOI: 10.1038/srep40641
+

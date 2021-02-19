@@ -1,0 +1,20 @@
+*Transcription_Factor_ID: LOC_Os03g50560
+*Experiment_Type: Binding
+*Technology/Method: ChIP-seq
+*Edge_Type: in planta:Bound
+*Data_Source/Publication: Zhai Molecular Cell 2019
+*Genotype: pUbi:PIBP1-GFP/NIL-Pigm
+*Variety: Nipponbare (NIL-Pigm)
+*Treatments: M. oryzae blast isolate TH12
+*Control: WT NIL-Pigm 
+*Tissue/Sample: leaves
+Treatment_Time: 36 hours 
+Antibody: anti-GFP
+Growth_Period_Days: 2 weeks
+Growth_Medium: soil
+Analysis_Method: MACS
+Analysis_Cutoff: Unknown
+DOI: 10.1016/j.molcel.2019.03.013
+
+
+

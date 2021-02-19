@@ -1,0 +1,18 @@
+*Transcription_Factor_ID: LOC_Os11g31340
+*Experiment_Type: Binding
+*Technology/Method: ChIP-seq
+*Edge_Type: in planta:Bound
+*Data_Source/Publication: Ren BioRxiv 2020
+*Genotype: Promoter:NAC127-3xFLAG
+*Variety: Zhonghua11
+*Treatments: heat
+*Control: Input DNA
+*Tissue/Sample: seed
+Treatment_Time: 7 days
+Antibody: anti-FLAG
+Growth_Period_Days: mature plants
+Growth_Medium: paddy fields
+Analysis_Method: MACS2
+Analysis_Cutoff: qvalue<0.05
+DOI: 10.1101/2020.02.08.939728
+

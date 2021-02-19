@@ -1,0 +1,18 @@
+*Transcription_Factor_ID: LOC_Os01g48446
+*Experiment_Type: Expression
+*Technology/Method: RNA-seq
+*Edge_Type: in planta:Regulated 
+*Data_Source/Publication: Shim Front. Plant Sci. 2018
+*Genotype: PGD1::OsNAC14 - OX 
+*Variety: Nipponbare
+*Treatments: none
+*Control: WT Nipponbare
+*Tissue/Sample: leaves
+Treatment_Time: NA
+Growth_Period_Days: 20 days 
+Growth_Medium: soil
+Analysis_Method: DESeq2
+Analysis_Cutoff: pvalue<0.05
+DOI: 10.3389/fpls.2018.00310
+
+

@@ -1,0 +1,16 @@
+*Transcription_Factor_ID: LOC_Os03g53020
+*Experiment_Type: Expression
+*Technology/Method: RNA-seq
+*Edge_Type: in planta:Regulated
+*Data_Source/Publication: Gupta bioRxiv preprint 2020
+*Genotype: loss-of-function bhlh148
+*Variety: Nipponbare
+*Treatments: drought
+*Control: WT Nipponbare
+*Tissue/Sample: leaves
+Treatment_Time: 10 days
+Growth_Period_Days: 45 days
+Growth_Medium: soil
+Analysis_Method: DESeq2
+Analysis_Cutoff: FDR<0.05
+DOI: 10.1101/2020.04.29.068379

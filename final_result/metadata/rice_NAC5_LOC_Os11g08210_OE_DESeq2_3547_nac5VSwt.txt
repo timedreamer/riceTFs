@@ -1,0 +1,16 @@
+*Transcription_Factor_ID: LOC_Os11g08210
+*Experiment_Type: Expression
+*Technology/Method: RNA-seq
+*Edge_Type: in planta:Regulated
+*Data_Source/Publication: Chung BMC Genomics 2018
+*Genotype: RCc3:6MYC-OsNAC5
+*Variety: Illmi
+*Treatments: none
+*Control: WT Illmi
+*Tissue/Sample: roots
+Treatment_Time: NA
+Growth_Period_Days: 20 days
+Growth_Medium: soil
+Analysis_Method: DESeq2
+Analysis_Cutoff: FDR<0.05
+DOI: 10.1186/s12864-017-4367-1

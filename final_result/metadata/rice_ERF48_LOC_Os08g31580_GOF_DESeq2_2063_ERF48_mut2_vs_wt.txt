@@ -1,0 +1,18 @@
+*Transcription_Factor_ID: LOC_Os08g31580
+*Experiment_Type: Expression
+*Technology/Method: RNA-seq
+*Edge_Type: in planta:Regulated
+*Data_Source/Publication: Jung Plant Biotechnology Journal 2017
+*Genotype: Rcc3-OsERF48#6 (root specific promoter transgenic rice)
+*Variety: Illmi
+*Treatments: none
+*Control: WT Illmi
+*Tissue/Sample: roots
+Treatment_Time: NA
+Growth_Period_Days: 2 weeks
+Growth_Medium: soil
+Analysis_Method: DESeq2
+Analysis_Cutoff: pvalue<0.05
+DOI: 10.1111/pbi.12716
+
+

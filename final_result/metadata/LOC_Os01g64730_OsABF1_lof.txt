@@ -1,0 +1,18 @@
+*Transcription_Factor_ID: LOC_Os01g64730
+*Experiment_Type: Expression
+*Technology/Method: RNA-seq
+*Edge_Type: in planta:Regulated 
+*Data_Source/Publication: Zhang J. Exp. Botany 2017 
+*Genotype: Oryza sativa japonica cv Kita-ake
+*Variety: Pubi:OsABF1-4EAR (ABF1E)(transcriptional repression of OsABF1)
+*Treatments: none 
+*Control: WT Kitaake
+*Tissue/Sample: leaves
+Treatment_Time: NA
+Growth_Period_Days: 4 weeks 
+Growth_Medium: soil
+Analysis_Method: Cuffdiff
+Analysis_Cutoff: qvalue<0.05
+DOI: 10.1093/jxb/erx260
+
+

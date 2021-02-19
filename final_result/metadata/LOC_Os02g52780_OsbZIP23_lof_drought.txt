@@ -1,0 +1,16 @@
+*Transcription_Factor_ID: LOC_Os02g52780 
+*Experiment_Type: Expression
+*Technology/Method: RNA-seq
+*Edge_Type: in planta:Regulated   
+*Data_Source/Publication: Zong Plant Physiol. 2016 
+*Genotype: osbzip23 lof mutant 
+*Variety: Zhonghua11
+*Treatments: drought 
+*Control: WT Zhonghua11
+*Tissue/Sample: leaves
+Treatment_Time: until leaves rolled
+Growth_Period_Days: four-leaf stage 
+Growth_Medium: soil
+Analysis_Method: EdgeR
+Analysis_Cutoff: pvalue<0.05&FC>2
+DOI: 10.1104/pp.16.00469

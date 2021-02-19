@@ -1,0 +1,18 @@
+*Transcription_Factor_ID: LOC_Os03g60080
+*Experiment_Type: Expression
+*Technology/Method: RNA-seq
+*Edge_Type: in planta:Regulated 
+*Data_Source/Publication: Chang Frontiers in Plant Science 2019
+*Genotype: maize ubiquitin promoter SNAC1 - OX
+*Variety: Zhonghua11
+*Treatments: none
+*Control: WT Zhonghua11 
+*Tissue/Sample: leaves
+Treatment_Time: NA
+Growth_Period_Days: 4-leaf-stage
+Growth_Medium: soil
+Analysis_Method: DESeq2
+Analysis_Cutoff: pvalue<0.05
+DOI: 10.3389/fpls.2019.00982
+
+

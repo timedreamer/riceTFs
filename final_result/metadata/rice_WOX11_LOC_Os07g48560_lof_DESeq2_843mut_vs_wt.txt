@@ -1,0 +1,16 @@
+*Transcription_Factor_ID: LOC_Os07g48560
+*Experiment_Type: Expression
+*Technology/Method: RNA-seq
+*Edge_Type: in planta:Regulated
+*Data_Source/Publication: Cheng NAR 2018
+*Genotype: T-DNA insertion wox11
+*Variety: Hwayoung
+*Treatments: none
+*Control: WT Hwayoung
+*Tissue/Sample: shoot apex
+Treatment_Time: NA
+Growth_Period_Days: 5 days
+Growth_Medium: Phytagel
+Analysis_Method: DESeq2
+Analysis_Cutoff: FDR<0.05
+DOI: 10.1093/nar/gky017

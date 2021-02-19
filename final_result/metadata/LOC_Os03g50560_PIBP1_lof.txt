@@ -1,0 +1,16 @@
+*Transcription_Factor_ID: LOC_Os03g50560
+*Experiment_Type: Expression
+*Technology/Method: RNA-seq
+*Edge_Type: in planta:Regulated   
+*Data_Source/Publication: Zhai Molecular Cell 2019
+*Genotype: PIBP1-RNAi
+*Variety: Nipponbare
+*Treatments: M. oryzae blast isolate TH12
+*Control: WT NIL-Pigm
+*Tissue/Sample: leaves
+Treatment_Time: 36 hours
+Growth_Period_Days: 2 weeks
+Growth_Medium: soil
+Analysis_Method: Unknown
+Analysis_Cutoff: Unknown
+DOI: 10.1016/j.molcel.2019.03.013

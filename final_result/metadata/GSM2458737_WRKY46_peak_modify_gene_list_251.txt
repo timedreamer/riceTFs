@@ -1,0 +1,18 @@
+*Transcription_Factor_ID: LOC_Os11g02480
+*Experiment_Type: Binding
+*Technology/Method: ChIP-seq
+*Edge_Type: in planta:Bound 
+*Data_Source/Publication: Hu Plant Cell 2017
+*Genotype: WRKY46-Myc
+*Variety: Nipponbare
+*Treatments: none
+*Control: Input DNA
+*Tissue/Sample: protoplast
+Treatment_Time: NA
+Antibody: anti-myc
+Growth_Period_Days: 2 weeks
+Growth_Medium: Unknown
+Analysis_Method: Unknown
+Analysis_Cutoff: Unknown
+DOI: 10.1105/tpc.17.00263
+

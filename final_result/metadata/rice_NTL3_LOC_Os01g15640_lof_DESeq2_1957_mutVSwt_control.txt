@@ -1,0 +1,16 @@
+*Transcription_Factor_ID: LOC_Os01g15640
+*Experiment_Type: Expression
+*Technology/Method: RNA-seq
+*Edge_Type: in planta:Regulated
+*Data_Source/Publication: Liu Plant Biotech. Journal 2020
+*Genotype: loss-of-function ntl3
+*Variety: Nipponbare
+*Treatments: none
+*Control: WT Nipponbare
+*Tissue/Sample: seedling
+Treatment_Time: NA
+Growth_Period_Days: 8 days 
+Growth_Medium: Kimura B nutrient solution
+Analysis_Method: DESeq2
+Analysis_Cutoff: FDR<0.05
+DOI: 10.1111/pbi.13297

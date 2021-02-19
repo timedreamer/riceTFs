@@ -1,0 +1,16 @@
+*Transcription_Factor_ID: LOC_Os08g07970
+*Experiment_Type: Expression
+*Technology/Method: RNA-seq
+*Edge_Type: in planta:Regulated
+*Data_Source/Publication: Yang BMC Plant Biology 2019
+*Genotype: CRISPR lof osbzip62
+*Variety: Nipponbare
+*Treatments: none
+*Control: WT Nipponbare
+*Tissue/Sample: leaves
+Treatment_Time: NA
+Growth_Period_Days: four-leaf stage
+Growth_Medium: liquid culture
+Analysis_Method: DESeq2
+Analysis_Cutoff: qvalue<0.05&FC>2
+DOI: doi.org/10.1186/s12870-019-1872-1

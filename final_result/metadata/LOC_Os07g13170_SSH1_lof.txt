@@ -1,0 +1,17 @@
+*Transcription_Factor_ID: LOC_Os07g13170
+*Experiment_Type: Expression
+*Technology/Method: RNA-seq
+*Edge_Type: in planta:Regulated
+*Data_Source/Publication: Jiang Plant Cell 2019
+*Genotype: ssh1 lof mutant- EMS-mutagenized YIL100 population
+*Variety: wild rice (Oryza rufipogon) introgression line YIL100
+*Treatments: none
+*Control: WT YIL100
+*Tissue/Sample: panicles
+Treatment_Time: NA
+Growth_Period_Days: Unknown
+Growth_Medium: soil
+Analysis_Method: Cuffdiff
+Analysis_Cutoff: qvalue<0.001&FC≥2
+DOI: 10.1105/tpc.18.00304
+
